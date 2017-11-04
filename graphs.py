@@ -1,5 +1,11 @@
-#!/usr/bin/python
+"""
+Name: graphs.py
+Author: Wesley Lee
+Assignment: Visualization Project
+Date: 11-02-2017
+"""
 
+#!/usr/bin/python
 import plotly.plotly as py
 import plotly.graph_objs as go
 
