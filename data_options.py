@@ -9,7 +9,6 @@ Date: 11-03-2017
 from chart_choice import basic_pie_chart, basic_bar_chart, basic_bubble_chart, basic_scatter_chart, line_plot_chart
 
 data_choice = """
-
 ================================================
 1) Score
 2) Total Vulnerabilities
@@ -19,7 +18,6 @@ data_choice = """
 6) Low Vulnerabilities
 7) Info Vulnerabilities
 ================================================
-
 """
 
 data_menu = "Data Option> "

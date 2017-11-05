@@ -7,7 +7,7 @@ Date: 11-02-2017
 
 #!/usr/bin/python
 from get_info import get_info, get_report, get_num_of_hosts, get_ips, get_crits, get_high, get_medium, get_low, get_score, get_info_vulns
-from graphs import pie_chart, bar_chart, bubble_chart, scatter_plot, simple_line_plot
+from graphs import pie_chart, bar_chart, bubble_chart, scatter_plot, simple_line_plot, stacked_bar_chart, basic_area_chart
 
 def basic_pie_chart(data_option):
 	ips = get_ips()
@@ -105,7 +105,7 @@ def basic_scatter_chart(data_option):
 		info_vuln == get_info_vulns()
 		scatter_plot(ips, info_vuln)
 	
-def line_plot_chart():
+def line_plot_chart(data_option):
 	ips = get_ips()
 	if data_option == '1':
 		score = get_score()
@@ -129,3 +129,20 @@ def line_plot_chart():
 		info_vuln == get_info_vulns()
 		simple_line_plot(ips, info_vuln)
 		
+def stacked_bar():
+	ips = get_ips()
+	crits = get_crits()
+	high = get_high()
+	medium = get_medium()
+	low = get_low()
+	
+	stacked_bar_chart(ips, crits, high, medium, low)
+	
+def area_chart():
+	ips = get_ips()
+	crits = get_crits()
+	high = get_high()
+	medium = get_medium()
+	low = get_low()
+	
+	basic_area_chart(ips, crits, high, medium, low)

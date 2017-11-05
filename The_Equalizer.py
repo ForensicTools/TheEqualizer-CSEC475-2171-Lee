@@ -23,7 +23,7 @@ banner = """
 =========================================================       
 """
 
-menu = """==============================
+menu = """================================================
 1) Get Scanner Info
 2) Print a specific report
 3) TBD
@@ -31,18 +31,19 @@ menu = """==============================
 
 c) Clear Terminal
 e) Exit Program
-==============================
+================================================
 """
 			
 def the_equalizer():
 	os.system("clear")
-	print(banner)
 	username = "VisProj" #raw_input("Username: ")
 	password = "Password1234" #getpass.getpass()
 	port = "8834" #raw_input("Port the server is running on: ")
 	
 	create_token(username, password, port)
 	token = get_token()
+	
+	print banner
 	
 	while 1:
 		print menu
@@ -59,19 +60,32 @@ def the_equalizer():
 			
 		elif option == '1':
 			get_info(token, port)
+			option = raw_input("\n(press q to quit): ")
+			
+			while option != 'q':
+				option = raw_input("\n(press q to quit): ")
+			
+			the_equalizer()
 			
 		elif option == '2':
 			report_id = raw_input("Enter the Report ID: ")
 			get_report(token, port, report_id, '2')
-			print("\n")
+			option = raw_input("\n(press q to quit): ")
+			
+			while option != 'q':
+				option = raw_input("\n(press q to quit): ")
+			
+			the_equalizer()
 			
 		elif option == '3':
 			report_id = raw_input("Enter the Report ID: ")
 			get_report(token, port, report_id, '3')
 			
 		elif option == '4':
-			print("\n")
 			chart_menu(token, port)
+		
+		os.system("clear")
+		print banner
 			
 	os.system("rm -rf token.txt")
 	os.system("rm -rf report.txt")
