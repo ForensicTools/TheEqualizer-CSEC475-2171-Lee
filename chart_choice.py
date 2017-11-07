@@ -2,11 +2,12 @@
 Name: chart_choice.py
 Author: Wesley Lee
 Assignment: Visualization Project
-Date: 11-02-2017
+Date Created: 11-02-2017
+Last Updated: 11-07-2017
 """
 
 #!/usr/bin/python
-from get_info import get_info, get_report, get_num_of_hosts, get_ips, get_crits, get_high, get_medium, get_low, get_score, get_info_vulns
+from get_info import get_info, get_report, get_num_of_hosts, get_ips, get_crits, get_high, get_medium, get_low, get_score, get_info_vulns, get_total_vulnerabilities
 from graphs import pie_chart, bar_chart, bubble_chart, scatter_plot, simple_line_plot, stacked_bar_chart, basic_area_chart
 
 def basic_pie_chart(data_option):
@@ -14,9 +15,9 @@ def basic_pie_chart(data_option):
 	if data_option == '1':
 		score = get_score()
 		pie_chart(ips, score)
-	#elif data_option == '2':
-		#total_vuln = get_total_vulnerabilities()
-		#pie_chart(ips, total_vuln)
+	elif data_option == '2':
+		total_vuln = get_total_vulnerabilities()
+		pie_chart(ips, total_vuln)
 	elif data_option == '3':
 		crits = get_crits()
 		pie_chart(ips, crits)
@@ -38,9 +39,9 @@ def basic_bar_chart(data_option):
 	if data_option == '1':
 		score = get_score()
 		bar_chart(ips, score)
-	#elif data_option == '2':
-		#total_vuln = get_total_vulnerabilities()
-		#bar_chart(ips, total_vuln)
+	elif data_option == '2':
+		total_vuln = get_total_vulnerabilities()
+		bar_chart(ips, total_vuln)
 	elif data_option == '3':
 		crits = get_crits()
 		bar_chart(ips, crits)
@@ -62,9 +63,9 @@ def basic_bubble_chart(data_option):
 	if data_option == '1':
 		score = get_score()
 		bubble_chart(ips, score)
-	#elif data_option == '2':
-		#total_vuln = get_total_vulnerabilities()
-		#bubble_chart(ips, total_vuln)
+	elif data_option == '2':
+		total_vuln = get_total_vulnerabilities()
+		bubble_chart(ips, total_vuln)
 	elif data_option == '3':
 		crits = get_crits()
 		bubble_chart(ips, crits)
@@ -86,9 +87,9 @@ def basic_scatter_chart(data_option):
 	if data_option == '1':
 		score = get_score()
 		scatter_plot(ips, score)
-	#elif data_option == '2':
-		#total_vuln = get_total_vulnerabilities()
-		#scatter_plot(ips, total_vuln)
+	elif data_option == '2':
+		total_vuln = get_total_vulnerabilities()
+		scatter_plot(ips, total_vuln)
 	elif data_option == '3':
 		crits = get_crits()
 		scatter_plot(ips, crits)
@@ -110,9 +111,9 @@ def line_plot_chart(data_option):
 	if data_option == '1':
 		score = get_score()
 		simple_line_plot(ips, score)
-	#elif data_option == '2':
-		#total_vuln = get_total_vulnerabilities()
-		#simple_line_plot(ips, total_vuln)
+	elif data_option == '2':
+		total_vuln = get_total_vulnerabilities()
+		simple_line_plot(ips, total_vuln)
 	elif data_option == '3':
 		crits = get_crits()
 		simple_line_plot(ips, crits)

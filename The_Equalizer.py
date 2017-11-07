@@ -2,15 +2,17 @@
 Name: The_Equalizer.py
 Author: Wesley Lee
 Assignment: Visualization Project
-Date: 11-02-2017
+Date Created: 11-02-2017
+Last Updated: 11-05-2017
 """
 
 #!/usr/bin/python
 import os, sys
 from create_token import create_token, get_token
-from get_info import get_info, get_report, get_num_of_hosts, get_ips, get_crits, get_high, get_medium, get_low, get_score
+from get_info import get_info, get_report, get_num_of_hosts, get_ips, get_crits, get_high, get_medium, get_low, get_score, get_total_vulnerabilities
 from chart_choice import basic_pie_chart, basic_bar_chart, basic_bubble_chart, basic_scatter_chart, line_plot_chart
 from submenu import chart_menu
+from beautifultable import BeautifulTable
 
 banner = """
  _____ _          _____             _ _             
@@ -26,7 +28,7 @@ banner = """
 menu = """================================================
 1) Get Scanner Info
 2) Print a specific report
-3) TBD
+3) Number of Vulnerabilities per IP from Scan
 4) Graph a Chart
 
 c) Clear Terminal
@@ -51,7 +53,7 @@ def the_equalizer():
 		
 		if option == 'c':
 			os.system("clear")
-			print(banner)
+			print banner
 		
 		elif option == 'e':
 			os.system("rm -rf token.txt")
@@ -59,7 +61,7 @@ def the_equalizer():
 			sys.exit()
 			
 		elif option == '1':
-			get_info(token, port)
+			get_info(token, port, '2')
 			option = raw_input("\n(press q to quit): ")
 			
 			while option != 'q':
@@ -80,6 +82,25 @@ def the_equalizer():
 		elif option == '3':
 			report_id = raw_input("Enter the Report ID: ")
 			get_report(token, port, report_id, '3')
+			
+			ips = get_ips()
+			vulns = get_total_vulnerabilities()
+			table = BeautifulTable()
+			table.column_headers = ("IP", "# of Vulnerabilities")
+			
+			print "\n"
+			
+			x = 0
+			while x < len(ips):
+				table.append_row([ips[x], vulns[x]])
+				x += 1
+			
+			print table
+			
+			option = raw_input("\n(press q to quit): ")
+			
+			while option != 'q':
+				option = raw_input("\n(press q to quit): ")
 			
 		elif option == '4':
 			chart_menu(token, port)

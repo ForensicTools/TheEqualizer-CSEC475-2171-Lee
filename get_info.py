@@ -2,15 +2,16 @@
 Name: get_info.py
 Author: Wesley Lee
 Assignment: Visualization Project
-Date: 11-02-2017
+Date Created: 11-02-2017
+Last Updated: 11-07-2017
 """
 
 #!/usr/bin/python
-
 import os
 
-def get_info(token, port):
+def get_info(token, port, option):
 	curl_cmd = "curl -s -k -X GET -H \"X-Cookie: token=" + token + "\" https://localhost:" + port + "/scans/ | python -m json.tool"
+	
 	os.system(curl_cmd)
 	
 def get_report(token, port, report_id, option):
@@ -30,7 +31,7 @@ def get_num_of_hosts():
 				hosts.append(line[21:-2])
 				
 	return hosts
-
+	
 def get_ips():
 	ips = []
 	with open("report.txt") as f:
@@ -89,3 +90,40 @@ def get_info_vulns():
 			if "\"info\"" in line:
 				info.append(line[20:-2])
 	return info
+	
+	
+def get_total_vulnerabilities():
+	ips = get_ips()
+	crits = get_crits()
+	high = get_high()
+	medium = get_medium()
+	low = get_low()
+	total_vulns = []
+	vulns_list = []
+	i = 0
+	x = 0
+	y = 0
+	t = 0
+	tmp = 0
+
+	while x < len(ips):
+		vulns_list.append(crits[x])
+		vulns_list.append(high[x])
+		vulns_list.append(medium[x])
+		vulns_list.append(low[x])
+		x += 1
+	
+	y = 0
+	while t < len(ips):
+		while y < (len(ips)):
+			tmp = 0
+			tmp += int(vulns_list[0]) + int(vulns_list[1]) + int(vulns_list[2]) + int(vulns_list[3])
+	
+			total_vulns.append(tmp)
+			del vulns_list[0:4]
+			
+			y += 1
+			
+		t += 1	
+
+	return total_vulns
