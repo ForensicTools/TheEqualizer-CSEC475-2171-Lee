@@ -1,0 +1,5 @@
+pip install plotly
+pip install beautifultable
+
+plotly account
+	requires username and api key
