@@ -3,7 +3,7 @@ Name: graphs.py
 Author: Wesley Lee
 Assignment: Visualization Project
 Date Created: 11-02-2017
-Last Updated: 11-05-2017
+Last Updated: 11-08-2017
 """
 
 #!/usr/bin/python
@@ -101,46 +101,55 @@ def stacked_bar_chart(x_axis, y_axis1, y_axis2, y_axis3, y_axis4):
 	py.plot(fig, filename = 'Vulnerabilitiy_Stacked_Bar_Chart')
 	
 	
-def basic_area_chart(x_axis, y_axis1, y_axis2, y_axis3, y_axis4):
-	trace1 = go.Scatter(
-		x = x_axis,
-		y = y_axis1,
-		fill = 'tozeroy',
-		name = 'Critical',
-			marker = dict(
-				color = 'rgb(196, 10, 10)',
-			)
+def stacked_area_chart(x_axis, y_axis1, y_axis2, y_axis3, y_axis4):
+	Crititcal = go.Scatter(
+			x = x_axis,
+			y = y_axis1,
+			mode = 'lines',
+			name = 'Critical',
+				line = dict(width=0.5,
+									color = 'rgb(196, 10, 10)'),
+			fill = 'tonexty'
 	)
-	
-	trace2 = go.Scatter(
-		x = x_axis,
-		y = y_axis2,
-		fill = 'tonexty',
-		name = 'High',
-			marker = dict(
-				color = 'rgb(224, 151, 4)',
-			)
+	High = go.Scatter(
+			x = x_axis,
+			y = y_axis2,
+			mode = 'lines',
+			name = 'High',
+				line = dict(width=0.5,
+									color='rgb(224, 151, 4)'),
+			fill = 'tonexty'
 	)
-	
-	trace3 = go.Scatter(
+	Medium = go.Scatter(
 			x = x_axis,
 			y = y_axis3,
-			fill = 'tozeroy',
+			mode = 'lines',
 			name = 'Medium',
-				marker = dict(
-					color = 'rgb(237, 187, 7)',
-				)
-		)
-	
-	trace4 = go.Scatter(
+				line = dict(width = 0.5,
+									color = 'rgb(237, 187, 7)'),
+			fill = 'tonexty'
+	)
+	Low = go.Scatter(
 			x = x_axis,
 			y = y_axis4,
-			fill = 'tonexty',
+			mode = 'lines',
 			name = 'Low',
-				marker = dict(
-					color = 'rgb(15, 183, 3)',
-				)
-		)
-		
-	data = [trace1, trace2, trace3, trace4]
-	py.plot(data, filename = 'basic_area_chart')
+				line = dict(width=0.5,
+									color = 'rgb(15, 183, 3)'),
+			fill='tonexty'
+	)
+	data = [Crititcal, High, Medium, Low]
+	layout = go.Layout(
+			showlegend = True,
+			xaxis = dict(
+					type = 'category',
+			),
+			yaxis=dict(
+					type = 'linear',
+					range = [1, 100],
+					dtick = 20,
+					ticksuffix = '%'
+			)
+	)
+	fig = go.Figure(data = data, layout = layout)
+	py.plot(fig, filename = 'stacked_area_plot')

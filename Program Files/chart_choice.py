@@ -3,12 +3,12 @@ Name: chart_choice.py
 Author: Wesley Lee
 Assignment: Visualization Project
 Date Created: 11-02-2017
-Last Updated: 11-07-2017
+Last Updated: 11-08-2017
 """
 
 #!/usr/bin/python
 from get_info import get_info, get_report, get_num_of_hosts, get_ips, get_crits, get_high, get_medium, get_low, get_score, get_info_vulns, get_total_vulnerabilities
-from graphs import pie_chart, bar_chart, bubble_chart, scatter_plot, simple_line_plot, stacked_bar_chart, basic_area_chart
+from graphs import pie_chart, bar_chart, bubble_chart, scatter_plot, simple_line_plot, stacked_bar_chart, stacked_area_chart
 
 def basic_pie_chart(data_option):
 	ips = get_ips()
@@ -146,4 +146,4 @@ def area_chart():
 	medium = get_medium()
 	low = get_low()
 	
-	basic_area_chart(ips, crits, high, medium, low)
+	stacked_area_chart(ips, crits, high, medium, low)
