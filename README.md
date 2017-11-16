@@ -1,8 +1,7 @@
 <span style="color:#fff; font-family: 'Times New Roman'; font-size: 12em;">
 
 # TheEqualizer-CSEC475-2171-Lee
-
-		Project utilizes the Nessus API to pull scans from server to record numbers and display charts and graphs using plotly.
+Project utilizes the Nessus API to pull scans from server to record numbers and display charts and graphs using plotly.
 
 # Current Version
 1. Operating System - MacOS High Sierra 10.13
@@ -11,19 +10,18 @@
 
 
 # Table of Contents
-
 		A. Create a Plotly Account
 		B. How to Find Plotly API Key
 		C. How to Install Requirements
 		D. How to Install Nessus
-			. Windows
-			2. MacOS
-			3. Linux
-		E. How to Install Python 2.7
+			Section 1. Windows
+			Section 2. MacOS
+			Section 3. Linux
+		E. How to Install Python 2.7.14
 		F. How to start The Equalizer
-			1. Windows
-			2. MacOS and Linux
-		
+			Section 1. Windows
+			Section 2. MacOS and Linux
+
 
 ## A. Create a Plotly Account
 
@@ -150,8 +148,19 @@
 15. After the installation is finished, log in with the administrator account 
 		you created when installing Nessus
 
-## E. How to Install Python 2.7
-		TODO
+## E. How to Install Python 2.7.14
+
+###  Section 1. Windows
+1. Go to https://www.python.org
+2. Scroll down to "Looking for Specific Release?" section
+3. Find "Python 2.7.14"
+4. Look for the correct installer based on your OS
+5. Run the Python Installer
+6. Click "Continue"
+7. Click "Continue" again and then click "Agree" for the License Agreement
+8. Don't change the Destination Folder; click "Continue"
+9. Finally click "Install"
+
 
 ## F. How to start The Equalizer
 
