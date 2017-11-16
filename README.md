@@ -5,23 +5,25 @@
 		Project utilizes the Nessus API to pull scans from server to record numbers and display charts and graphs using plotly.
 
 # Current Version
-		1. Operating System - MacOS High Sierra 10.13
-		2. Nessus Server Version - 6.11.2
-		3. Python Version - 2.7.14
+1. Operating System - MacOS High Sierra 10.13
+2. Nessus Server Version - 6.11.2
+3. Python Version - 2.7.14
 
-# Table of Contents:
+
+# Table of Contents
+
 		A. Create a Plotly Account
 		B. How to Find Plotly API Key
 		C. How to Install Requirements
 		D. How to Install Nessus
-			Section 1. Windows
-			Section 2. MacOS
-			Section 3. Linux
+			. Windows
+			2. MacOS
+			3. Linux
 		E. How to Install Python 2.7
 		F. How to start The Equalizer
-			Section 1. Windows
-			Section 2. MacOS and Linux
-
+			1. Windows
+			2. MacOS and Linux
+		
 
 ## A. Create a Plotly Account
 
