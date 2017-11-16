@@ -1,30 +1,29 @@
+<span style="color:#fff; font-family: 'Times New Roman'; font-size: 12em;">
+
 # TheEqualizer-CSEC475-2171-Lee
 
-Project utilizes the Nessus API to pull scans from server to record
-numbers and display charts and graphs using plotly.
+		Project utilizes the Nessus API to pull scans from server to record numbers and display charts and graphs using plotly.
 
-Current Version:
-	Operating System - MacOS High Sierra 10.13
-	Nessus Server Version - 6.11.2
-	Python Version - 2.7.14
+# Current Version
+		1. Operating System - MacOS High Sierra 10.13
+		2. Nessus Server Version - 6.11.2
+		3. Python Version - 2.7.14
 
-#############################################################################
+# Table of Contents:
+		A. Create a Plotly Account
+		B. How to Find Plotly API Key
+		C. How to Install Requirements
+		D. How to Install Nessus
+			Section 1. Windows
+			Section 2. MacOS
+			Section 3. Linux
+		E. How to Install Python 2.7
+		F. How to start The Equalizer
+			Section 1. Windows
+			Section 2. MacOS and Linux
 
-Table of Contents:
-	A. Create a Plotly Account
-	B. How to Find Plotly API Key
-	C. Installing Requirements
-	D. Installing Nessus
-		Section 1. Windows
-		Section 2. MacOS
-		Section 3. Linux
-	E. How to start The Equalizer
-		Section 1. Windows
-		Section 2. MacOS and Linux
 
-#############################################################################
-
-A. Create a Plotly Account
+## A. Create a Plotly Account
 
 1. Go to https://plot.ly/
 2. Click on "Log In" at the top right of the webpage
@@ -32,9 +31,8 @@ A. Create a Plotly Account
 	the "Sign Up" tab.
 4. Fill out the necessary log in information
 
-#############################################################################
 
-B. How to Find Plotly API Key
+## B. How to Find Plotly API Key
 
 1. Login to your plotly account at https://plot.ly/
 2. Once logged in you should see your username at the top right of the 
@@ -47,9 +45,8 @@ B. How to Find Plotly API Key
 7. This will regenerate a new API Key
 8. You will need your username and  the API Key when you run setup.py
 
-#############################################################################
 
-C. Installing Requirements
+## C. How to Install Requirements
 
 1. Open Terminal 
 2. Change the directory to TheEqualizer-CSEC475-2171-Lee
@@ -64,11 +61,10 @@ C. Installing Requirements
 	run The Equalizer program
 7. Enter 'y' to run the program or 'n' to exit
 
-#############################################################################
 
-D. Installing Nessus 
+## D. How to Install Nessus
 
-### Section 1. Windows ###
+### Section 1. Windows
 
 1.  Go to https://www.tenable.com/products/nessus/select-your-operating-system
 2.  On left side of the webpage click "Microsoft Windows"
@@ -95,7 +91,7 @@ D. Installing Nessus
 		created when installing Nessus
 
 
-### Section 2. MacOS ###
+###  Section 2. MacOS
 
 1.  Go to https://www.tenable.com/products/nessus/select-your-operating-system
 2.  On left side of the webpage click "MacOS"
@@ -123,7 +119,7 @@ D. Installing Nessus
 		you created when installing Nessus
 
 
-### Section 3. Linux ###
+###  Section 3. Linux
 
 1.  Go to https://www.tenable.com/products/nessus/select-your-operating-system
 2.  On left side of the webpage click "Linux"
@@ -138,7 +134,7 @@ D. Installing Nessus
 6.  Enter in your Administrator password for the system
 7.  After Nessus has finished installing you will need to start the server, 
 		enter "systemctl start nessusd.service"
-	- To verify that the server is running enter 
+	 - To verify that the server is running enter 
 		"systemctl status nessusd.service", you should see "active (running)" in green text
 8.  Next, open https://localhost.localdomain:8834/ in a web browser
 9.  The browser will tell you the site isn't safe; but go and click "Advanced"; 
@@ -152,14 +148,14 @@ D. Installing Nessus
 15. After the installation is finished, log in with the administrator account 
 		you created when installing Nessus
 
+## E. How to Install Python 2.7
+		TODO
 
-#############################################################################
-
-E. How to start The Equalizer
+## F. How to start The Equalizer
 
 1. Open a terminal
 2. Change the directory to TheEqualizer-CSEC475-2171-Lee
 	-> "cd TheEqualizer-CSEC475-2171-Lee"
 3. Make sure you ran setup.py before running
 4. Enter the command "./The_Equalizer.py" to run the program
-
+</span>
