@@ -10,18 +10,6 @@ Last Updated: 11-05-2017
 from chart_choice import basic_pie_chart, basic_bar_chart, basic_bubble_chart, basic_scatter_chart, line_plot_chart
 import printer
 
-data_choice = """
-================================================
-1) Score
-2) Total Vulnerabilities
-3) Critical Vulnerabilities
-4) High Vulnerabilities
-5) Medium Vulnerabilities
-6) Low Vulnerabilities
-7) Info Vulnerabilities
-================================================
-"""
-
 def data_option(chart_type):
 	printer.data_option_menu()
 	
