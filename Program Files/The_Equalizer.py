@@ -12,50 +12,32 @@ from create_token import create_token, get_token
 from get_info import get_info, get_report, get_num_of_hosts, get_ips, get_crits, get_high, get_medium, get_low, get_score, get_total_vulnerabilities
 from chart_choice import basic_pie_chart, basic_bar_chart, basic_bubble_chart, basic_scatter_chart, line_plot_chart
 from submenu import chart_menu
+import printer
 from beautifultable import BeautifulTable
-
-banner = """
- _____ _          _____             _ _             
-|_   _| |_ ___   |   __|___ _ _ ___| |_|___ ___ ___ 
-  | | |   | -_|  |   __| . | | | .'| | |- _| -_|  _|
-  |_| |_|_|___|  |_____|_  |___|__,|_|_|___|___|_|  
-		         |_|              
-		               
-	By Wesley Lee -- wtl5736@rit.edu   
-=========================================================       
-"""
-
-menu = """================================================
-1) Get Scanner Info
-2) Print a specific report
-3) Number of Vulnerabilities per IP from Scan
-4) Graph a Chart
-
-c) Clear Terminal
-e) Exit Program
-================================================
-"""
+import getpass
 			
 def the_equalizer():
 	os.system("clear")
-	username = "VisProj" #raw_input("Username: ")
-	password = "Password1234" #getpass.getpass()
-	port = "8834" #raw_input("Port the server is running on: ")
+	print("Enter information for Nessus Server:")
+	username = raw_input("\nUsername: ") #"VisProj"
+	password = getpass.getpass() #"Password1234"
+	port = raw_input("Port the server is running on: ") #"8834"
 	
 	create_token(username, password, port)
 	token = get_token()
 	
-	print banner
+	os.system("clear")
+	printer.banner()
 	
 	while 1:
-		print menu
-		option = raw_input("The Equalizer> ")
+		printer.print_main_menu()
+		option = raw_input(printer.header)
 		
-		if option == 'c':
+		if option == 'c' or option == 'C':
 			os.system("clear")
-			print banner
+			printer.banner()
 		
-		elif option == 'e':
+		elif option == 'e' or option == 'E':
 			os.system("rm -rf token.txt")
 			os.system("rm -rf report.txt")
 			sys.exit()
@@ -70,7 +52,7 @@ def the_equalizer():
 			the_equalizer()
 			
 		elif option == '2':
-			report_id = raw_input("Enter the Report ID: ")
+			report_id = raw_input(printer.report_id)
 			get_report(token, port, report_id, '2')
 			option = raw_input("\n(press q to quit): ")
 			
@@ -80,7 +62,7 @@ def the_equalizer():
 			the_equalizer()
 			
 		elif option == '3':
-			report_id = raw_input("Enter the Report ID: ")
+			report_id = raw_input(printer.report_id)
 			get_report(token, port, report_id, '3')
 			
 			ips = get_ips()
@@ -106,7 +88,7 @@ def the_equalizer():
 			chart_menu(token, port)
 		
 		os.system("clear")
-		print banner
+		printer.banner()
 			
 	os.system("rm -rf token.txt")
 	os.system("rm -rf report.txt")
