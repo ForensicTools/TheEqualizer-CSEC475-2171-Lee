@@ -3,7 +3,7 @@ Name: get_info.py
 Author: Wesley Lee
 Assignment: Visualization Project
 Date Created: 11-02-2017
-Last Updated: 11-07-2017
+Last Updated: 11-23-2017
 """
 
 #!/usr/bin/python

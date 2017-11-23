@@ -2,6 +2,8 @@
 
 import os
 
+os.system("clear")
+
 print """
 What OS are you running?
 

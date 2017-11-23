@@ -3,12 +3,11 @@ Name: printer.py
 Author: Wesley Lee
 Assignment: Visualization Project
 Date Created: 11-16-2017
-Last Updated: 11-16-2017
+Last Updated: 11-23-2017
 """
 
 #!/usr/bin/python
 import os, time
-from time import sleep
 import urllib2 as urllib
 BLUE, RED, WHITE, YELLOW, MAGENTA, GREEN, BOLD, END = '\33[94m', '\033[91m', '\33[97m', '\33[93m', '\033[1;35m', '\033[1;32m', '\033[1m', '\033[0m'
 header = (BOLD + '{0}The Equalizer{1}> {2}'.format(BLUE, WHITE, END))
@@ -70,7 +69,7 @@ def data_option_menu():
 	print(END)
 	
 def sleeper():
-	sleep(0)
+	time.sleep(0)
 
 def banner():
 	spaces = " " * 76
