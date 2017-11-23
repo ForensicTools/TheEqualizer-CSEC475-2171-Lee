@@ -22,9 +22,10 @@ def the_equalizer():
 		#print("Enter information for Nessus Server:")
 		username = "VisProj" #raw_input("\nUsername: ") #"VisProj"
 		password = "Password1234" #getpass.getpass() #"Password1234"
+		url = raw_input("IP Address or URL of Nessus Server: ")
 		port = "8834" #raw_input("Port the server is running on: ") #"8834"
 		
-		create_token(username, password, port)
+		create_token(username, password, url, port)
 		token = get_token()
 		
 		os.system("clear")
@@ -52,7 +53,7 @@ def the_equalizer():
 				sys.exit()
 				
 			elif option == '1':
-				get_info(token, port, '2')
+				get_info(token, url, port, '2')
 				option = raw_input("\n(press q to quit): ")
 				
 				while option != 'q':
@@ -62,7 +63,7 @@ def the_equalizer():
 				
 			elif option == '2':
 				report_id = raw_input(printer.report_id)
-				get_report(token, port, report_id, '2')
+				get_report(token, url, port, report_id, '2')
 				option = raw_input("\n(press q to quit): ")
 				
 				while option != 'q':
@@ -72,7 +73,7 @@ def the_equalizer():
 				
 			elif option == '3':
 				report_id = raw_input(printer.report_id)
-				get_report(token, port, report_id, '3')
+				get_report(token, url, port, report_id, '3')
 				
 				ips = get_ips()
 				vulns = get_total_vulnerabilities()

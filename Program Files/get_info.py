@@ -9,14 +9,14 @@ Last Updated: 11-07-2017
 #!/usr/bin/python
 import os
 
-def get_info(token, port, option):
-	curl_cmd = "curl -s -k -X GET -H \"X-Cookie: token=" + token + "\" https://localhost:" + port + "/scans/ | python -m json.tool"
+def get_info(token, url, port, option):
+	curl_cmd = "curl -s -k -X GET -H \"X-Cookie: token=" + token + "\" https://" + url + ":" + port + "/scans/ | python -m json.tool"
 	
 	os.system(curl_cmd)
 	
-def get_report(token, port, report_id, option):
+def get_report(token, url, port, report_id, option):
 	os.system("rm -rf report.txt")
-	curl_cmd = "curl -s -k -X GET -H \"X-Cookie: token=" + token + "\" https://localhost:" + port + "/scans/" + report_id + "/ | python -m json.tool"
+	curl_cmd = "curl -s -k -X GET -H \"X-Cookie: token=" + token + "\" https://" + url ":" + port + "/scans/" + report_id + "/ | python -m json.tool"
 	if option == '2':
 		os.system(curl_cmd + " >> report.txt")
 		os.system(curl_cmd)
