@@ -18,7 +18,8 @@ Project utilizes the Nessus API to pull scans from server to record numbers and 
 			Section 2. Linux
 		E. How to Install Python 2.7.14
 		F. How to start The Equalizer
-			Section 1. MacOS and Linux`
+			Section 1. MacOS and Linux
+		G. How to Find Nessus IP/URL, Port Number, and Report ID
 
 
 ## A. Create a Plotly Account
@@ -28,8 +29,6 @@ Project utilizes the Nessus API to pull scans from server to record numbers and 
 3. If you already have an account sign in; if you don't click on 
 	the "Sign Up" tab.
 4. Fill out the necessary log in information
-
-![picture](/Pictures/Nessus_Info.png)
 
 
 ## B. How to Find Plotly API Key
@@ -44,6 +43,8 @@ Project utilizes the Nessus API to pull scans from server to record numbers and 
 6. The API Key is hidden; click on "Regenerate Key"
 7. This will regenerate a new API Key
 8. You will need your username and  the API Key when you run setup.py
+
+![picture](/Pictures/Plotly_Info.png)
 
 
 ## C. How to Install Requirements
@@ -141,5 +142,18 @@ Project utilizes the Nessus API to pull scans from server to record numbers and 
 	-> "cd TheEqualizer-CSEC475-2171-Lee"
 3. Make sure you ran setup.py before running
 4. Enter the command "./The_Equalizer.py" to run the program
+
+
+## G. How to Find Nessus IP/URL, Port Number, and Report ID
+1. Open your the Nessus Server in a web browser
+2. Log in with the correct credentials
+3. Click on the scan you are trying to access
+4. Information:
+  * Red Arrow = Nessus Server IP/URL Address
+  * Blue Arrow = Nessus Server Port Number
+  * Pink Arrow = Report ID Number
+
+![picture](/Pictures/Nessus_Info.png)
+
 
 </span>
