@@ -29,6 +29,8 @@ Project utilizes the Nessus API to pull scans from server to record numbers and 
 	the "Sign Up" tab.
 4. Fill out the necessary log in information
 
+![picture](/Pictures/Nessus_Info.png)
+
 
 ## B. How to Find Plotly API Key
 
