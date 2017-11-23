@@ -16,7 +16,7 @@ def get_info(token, url, port, option):
 	
 def get_report(token, url, port, report_id, option):
 	os.system("rm -rf report.txt")
-	curl_cmd = "curl -s -k -X GET -H \"X-Cookie: token=" + token + "\" https://" + url ":" + port + "/scans/" + report_id + "/ | python -m json.tool"
+	curl_cmd = "curl -s -k -X GET -H \"X-Cookie: token=" + token + "\" https://" + url + ":" + port + "/scans/" + report_id + "/ | python -m json.tool"
 	if option == '2':
 		os.system(curl_cmd + " >> report.txt")
 		os.system(curl_cmd)
