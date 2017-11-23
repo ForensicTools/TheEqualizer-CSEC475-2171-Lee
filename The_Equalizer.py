@@ -5,16 +5,13 @@ import os
 print """
 What OS are you running?
 
-1) Windows
-2) MacOS
-3) Linux
+1) MacOS
+2) Linux
 """
 
-os = raw_input("OS Type: ")
+os_choice = raw_input("OS Type: ")
 
-if os == '1':
-	os.system("python \"Program Files\The_Equalizer.py\"")
-elif os == '2':
+if os_choice == '1':
 	os.system("python Program\ Files/The_Equalizer.py")
-elif os == '3':
+elif os_choice == '2':
 	os.system("python Program\ Files/The_Equalizer.py")
