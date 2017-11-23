@@ -14,13 +14,11 @@ Project utilizes the Nessus API to pull scans from server to record numbers and 
 		B. How to Find Plotly API Key
 		C. How to Install Requirements
 		D. How to Install Nessus
-			Section 1. Windows
-			Section 2. MacOS
-			Section 3. Linux
+			Section 1. MacOS
+			Section 2. Linux
 		E. How to Install Python 2.7.14
 		F. How to start The Equalizer
-			Section 1. Windows
-			Section 2. MacOS and Linux`
+			Section 1. MacOS and Linux`
 
 
 ## A. Create a Plotly Account
@@ -64,34 +62,7 @@ Project utilizes the Nessus API to pull scans from server to record numbers and 
 
 ## D. How to Install Nessus
 
-### Section 1. Windows
-
-1.  Go to https://www.tenable.com/products/nessus/select-your-operating-system
-2.  On left side of the webpage click "Microsoft Windows"
-3.  Choose your version of windows (click on the .msi file to download)
-	 a. After downloading the .msi file if you dont have an Activation Code 
-		click on "Get an Activation Code" below where you select your operating system
-	 b. Choose the version of Nessus you want (Home, Professional, or Manager)
-	 c. You should be emailed your activation key
-4.  Run the Nessus .msi file to install
-5.  Once the Tenable Nessus - InstallShield Wizard is opened and running click "Next"
-6.  Then "Accept" the License Agreement for Nessus
-7.  Click "Next" again
-8.  Finally, click "Install" (Requires Administrator Password)
-9.  After the installation is complete click "Finish"
-10. This will open a browser windows; click "Connect via SSL"
-11. The browser will tell you the site isn't safe; but go and click "Advanced"; 
-		depending on your browser add the exception or proceed to the localhost
-12. Next it will bring you to the Nessus Welcome screen; click "Continue"
-13. Next enter the "Username" and your "Password" for the Administrator account for Nessus
-14. Make sure the Registration is set to "Nessus (Home, Professional, or Manager)"
-15. Then enter in your activation code that should've been emailed to you, then click "Next"
-16. Nessus will download the correct version based on the activation code entered
-17. After the installation is finished, log in with the administrator account you 
-		created when installing Nessus
-
-
-###  Section 2. MacOS
+###  Section 1. MacOS
 
 1.  Go to https://www.tenable.com/products/nessus/select-your-operating-system
 2.  On left side of the webpage click "MacOS"
@@ -119,7 +90,7 @@ Project utilizes the Nessus API to pull scans from server to record numbers and 
 		you created when installing Nessus
 
 
-###  Section 3. Linux
+###  Section 2. Linux
 
 1.  Go to https://www.tenable.com/products/nessus/select-your-operating-system
 2.  On left side of the webpage click "Linux"
