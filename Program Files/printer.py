@@ -1,5 +1,12 @@
-#!/usr/bin/python
+"""
+Name: printer.py
+Author: Wesley Lee
+Assignment: Visualization Project
+Date Created: 11-16-2017
+Last Updated: 11-16-2017
+"""
 
+#!/usr/bin/python
 import os, time
 from time import sleep
 import urllib2 as urllib

@@ -20,7 +20,7 @@ Project utilizes the Nessus API to pull scans from server to record numbers and 
 		E. How to Install Python 2.7.14
 		F. How to start The Equalizer
 			Section 1. Windows
-			Section 2. MacOS and Linux
+			Section 2. MacOS and Linux`
 
 
 ## A. Create a Plotly Account
@@ -150,7 +150,6 @@ Project utilizes the Nessus API to pull scans from server to record numbers and 
 
 ## E. How to Install Python 2.7.14
 
-###  Section 1. Windows
 1. Go to https://www.python.org
 2. Scroll down to "Looking for Specific Release?" section
 3. Find "Python 2.7.14"
@@ -169,4 +168,5 @@ Project utilizes the Nessus API to pull scans from server to record numbers and 
 	-> "cd TheEqualizer-CSEC475-2171-Lee"
 3. Make sure you ran setup.py before running
 4. Enter the command "./The_Equalizer.py" to run the program
+
 </span>
