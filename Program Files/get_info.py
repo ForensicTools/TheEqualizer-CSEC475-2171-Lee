@@ -9,6 +9,24 @@ Last Updated: 11-07-2017
 #!/usr/bin/python
 import os
 
+def get_username():
+	os.system("clear")
+	#print("Enter information for Nessus Server:")
+	username = "VisProj" #raw_input("\nUsername: ") #"VisProj"
+	return username
+
+def get_password():
+	password = "Password1234" #getpass.getpass() #"Password1234"
+	return password
+
+def get_url():
+	url = raw_input("IP Address or URL of Nessus Server: ")
+	return url
+
+def get_port():
+	port = "8834" #raw_input("Port the server is running on: ") #"8834"
+	return port
+
 def get_info(token, url, port, option):
 	curl_cmd = "curl -s -k -X GET -H \"X-Cookie: token=" + token + "\" https://" + url + ":" + port + "/scans/ | python -m json.tool"
 	
