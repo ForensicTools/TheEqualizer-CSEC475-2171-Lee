@@ -4,17 +4,24 @@ Author: Wesley Lee
 Assignment: Visualization Project
 Date Created: 11-16-2017
 Last Updated: 11-23-2017
+
+Description:
+	Prints all the necessary menus and banner when called.
 """
 
 #!/usr/bin/python
 import os, time
-import urllib2 as urllib
+
+# Color Variables
 BLUE, RED, WHITE, YELLOW, MAGENTA, GREEN, BOLD, END = '\33[94m', '\033[91m', '\33[97m', '\33[93m', '\033[1;35m', '\033[1;32m', '\033[1m', '\033[0m'
+
+# Main Text
 header = (BOLD + '{0}The Equalizer{1}> {2}'.format(BLUE, WHITE, END))
 submenu = (BOLD + '{0}Graph a Chart{1}> {2}'.format(BLUE, WHITE, END))
 report_id = (BOLD + '{0}Enter the Report ID: {1}> {2}'.format(BLUE, WHITE, END))
 data_menu = (BOLD + '{0}Data Option{1}> {2}'.format(BLUE, WHITE, END))
 
+# The Equalizer Main Menu
 def print_main_menu():
 	print(BOLD + 'Choose option from menu:\n')
 	sleeper()
@@ -30,6 +37,7 @@ def print_main_menu():
 	sleeper()
 	print('\t{0}[{1}E{2}]{3} Exit Program\n').format(YELLOW, RED, YELLOW, WHITE)
 	
+# Graph Menu Options
 def chart_menu_options():
 	print(BOLD + WHITE + '\nChoose a chart type:\n')
 	sleeper()
@@ -48,7 +56,8 @@ def chart_menu_options():
 	print('\t{0}[{1}7{2}]{3} Area Chart (Vulnerabilities Only)').format(YELLOW, RED, YELLOW, WHITE)
 	sleeper()
 	print(END)
-	
+
+# Data Options Menu
 def data_option_menu():
 	print(BOLD + WHITE + '\nChoose a data option:\n')
 	sleeper()
@@ -67,10 +76,12 @@ def data_option_menu():
 	print('\t{0}[{1}7{2}]{3} Info Vulnerabilities').format(YELLOW, RED, YELLOW, WHITE)
 	sleeper()
 	print(END)
-	
+
+# Function to display the menus faster
 def sleeper():
 	time.sleep(0)
 
+# The Equalizer Banner
 def banner():
 	spaces = " " * 76
 	print(BOLD + RED + spaces + """

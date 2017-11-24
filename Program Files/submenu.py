@@ -4,11 +4,15 @@ Author: Wesley Lee
 Assignment: Visualization Project
 Date Created: 11-02-2017
 Last Updated: 11-23-2017
+
+Description:
+	Displays a specific chart based off of user choice.
 """
 
 #!/usr/bin/python
 import get_info, chart_choice, printer, data_options
 
+# Displays a specific chart based off of the choice option
 def chart_menu(token, url, port):
 	printer.chart_menu_options()
 	option = raw_input(printer.submenu)

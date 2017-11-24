@@ -4,11 +4,15 @@ Author: Wesley Lee
 Assignment: Visualization Project
 Date Created: 11-02-2017
 Last Updated: 11-23-2017
+
+Description:
+	Graphs a chart with data option specified by user.
 """
 
 #!/usr/bin/python
 import get_info, graphs 
 
+# Graphs a basic pie chart with data specified by user
 def basic_pie_chart(data_option):
 	ips = get_info.get_ips()
 	if data_option == '1':
@@ -32,7 +36,8 @@ def basic_pie_chart(data_option):
 	elif data_option == '7':
 		info_vuln == get_info.get_info_vulns()
 		graphs.pie_chart(ips, info_vuln)
-	
+
+# Graphs a basic bar chart with data specified by user
 def basic_bar_chart(data_option):
 	ips = get_info.get_ips()
 	if data_option == '1':
@@ -56,7 +61,8 @@ def basic_bar_chart(data_option):
 	elif data_option == '7':
 		info_vuln == get_info.get_info_vulns()
 		graphs.bar_chart(ips, info_vuln)
-	
+
+# Graphs a bubble chart with data specified by user	
 def basic_bubble_chart(data_option):
 	ips = get_info.get_ips()
 	if data_option == '1':
@@ -81,6 +87,7 @@ def basic_bubble_chart(data_option):
 		info_vuln == get_info.get_info_vulns()
 		graphs.bubble_chart(ips, info_vuln)
 
+# Graphs a scatter plot with data specified by user
 def basic_scatter_chart(data_option):
 	ips = get_info.get_ips()
 	if data_option == '1':
@@ -104,7 +111,8 @@ def basic_scatter_chart(data_option):
 	elif data_option == '7':
 		info_vuln == get_info_vulns()
 		graphs.scatter_plot(ips, info_vuln)
-	
+
+# Graphs a line plot with data specified by user	
 def line_plot_chart(data_option):
 	ips = get_info.get_ips()
 	if data_option == '1':
@@ -128,7 +136,8 @@ def line_plot_chart(data_option):
 	elif data_option == '7':
 		info_vuln = get_info.get_info_vulns()
 		graphs.simple_line_plot(ips, info_vuln)
-		
+
+# Graphs a stacked bar chart with data specified by user		
 def stacked_bar():
 	ips = get_info.get_ips()
 	crits = get_info.get_crits()
@@ -137,7 +146,8 @@ def stacked_bar():
 	low = get_info.get_low()
 	
 	graphs.stacked_bar_chart(ips, crits, high, medium, low)
-	
+
+# Graphs a area chart with data specified by user	
 def area_chart():
 	ips = get_info.get_ips()
 	crits = get_info.get_crits()

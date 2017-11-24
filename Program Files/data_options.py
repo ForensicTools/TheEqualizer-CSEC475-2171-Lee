@@ -3,12 +3,17 @@ Name: data_options.py
 Author: Wesley Lee
 Assignment: Visualization Project
 Date Created: 11-03-2017
-Last Updated: 11-16-2017
+Last Updated: 11-23-2017
+
+Description:
+	Graphs the chart with the data option
+	chosen by the user.
 """
 
 #!/usr/bin/python
 import chart_choice, printer
 
+# Data Option Specification
 def data_option(chart_type):
 	printer.data_option_menu()
 	

@@ -1,14 +1,20 @@
 """
-Name: The_Equalizer.py
+Name: Main.py
 Author: Wesley Lee
 Assignment: Visualization Project
 Date Created: 11-02-2017
 Last Updated: 11-23-2017
+
+Description:
+	The Equalizer utilizes the Nessus API to pull information from scans via Nessus 
+	Server. You can choose which information you want to see and the type of 
+	graph you want as well.
 """
 
 #!/usr/bin/python
-import os, sys, create_token, get_info, submenu, printer, beautifultable, getpass
+import os, sys, create_token, get_info, submenu, printer, beautifultable
 	
+# Main Program
 def the_equalizer(url, port):
 	try:	
 		os.system("clear")
