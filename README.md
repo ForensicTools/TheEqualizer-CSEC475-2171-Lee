@@ -43,6 +43,9 @@ Project utilizes the Nessus API to pull scans from server to record numbers and 
 6. The API Key is hidden; click on "Regenerate Key"
 7. This will regenerate a new API Key
 8. You will need your username and  the API Key when you run setup.py
+9. Information:
+   * Red Arrow = Plotly Username
+   * Blue Arror = Plotly API Key
 
 ![picture](/Pictures/Plotly_Info.png)
 
