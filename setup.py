@@ -34,7 +34,7 @@ def install_plotly(username, api_key):
 # Run The Equalizer Program
 def run_program(user_input):
 	if user_input == 'y':
-		os.system("./The_Equalizer.py")
+		os.system("python The_Equalizer.py")
 	elif user_input == 'n':
 		os.system("clear")
 		sys.exit()
