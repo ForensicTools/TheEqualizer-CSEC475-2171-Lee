@@ -11,12 +11,7 @@ Description:
 
 #!/usr/bin/python
 import os, sys
-
-print """What OS are you running?
-
-1) MacOS
-2) Linux
-"""
+BLUE, RED, WHITE, YELLOW, MAGENTA, GREEN, BOLD, END = '\33[94m', '\033[91m', '\33[97m', '\33[93m', '\033[1;35m', '\033[1;32m', '\033[1m', '\033[0m'
 
 def os_choice():
 	print """What OS are you running?
@@ -49,18 +44,9 @@ def install_pymods_linux():
 	os.system("pip install -r requirements.txt")
 
 def is_root():
-	notRoot = False
-	try:
-		# check whether user is root
-		if (os.geteuid() != 0):
-			print("\n{0}ERROR: Network Vulnerability Programs v2.0 must be run with root privileges. Try again with sudo:\n\t{1}$ sudo python Network_Vulnerability_Program_v2.0.py{2}\n").format(RED, GREEN, END)
-			notRoot = True
-	except:
-		# then user is probably on windows
-		pass
-		
-	if (notRoot):
-		raise SystemExit
+	if not os.geteuid()==0:
+		print("\n{0}ERROR: setup.py must be run with root privileges. Try again with sudo:\n\t{1}$ sudo python setup.py{2}\n").format(RED, GREEN, END)
+		sys.exit()
 
 # Install Plotly Account
 def install_plotly(username, api_key):
