@@ -22,8 +22,10 @@ print """What OS are you running?
 
 os_choice = raw_input("OS Type: ")
 
-#OS Specification
+# OS Specification
 if os_choice == '1':
+	os.system("osascript StyleTerm.scpt 1 Homebrew")
 	os.system("python Program\ Files/Main.py")
+	
 elif os_choice == '2':
 	os.system("python Program\ Files/Main.py")
