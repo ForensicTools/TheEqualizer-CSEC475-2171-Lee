@@ -13,6 +13,7 @@ Description:
 #!/usr/bin/python
 import os, getpass
 
+# Checks if user ran program as root
 def is_root():
 	if not os.geteuid()==0:
 		print("\n{0}ERROR: The Equalizer must be run with root privileges. Try again with sudo:\n\t{1}$ sudo python The_Equalizer.py{2}\n").format(RED, GREEN, END)

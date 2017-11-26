@@ -31,7 +31,7 @@ def install_pymods_macos():
 	# Install Python Module
 	os.system("clear")
 	print "Installing Necessary Python Modules...\n\n"
-	os.system("pip install -r requirements.txt")
+	os.system("pip install -r Installation\ Files/requirements.txt")
 
 def install_pymods_linux():
 	# Install Python Module
@@ -44,7 +44,7 @@ def install_pymods_linux():
 	os.system("apt-get install curl")
 	
 	print "\nInstalling Necessary Python Modules...\n\n"
-	os.system("pip install -r requirements.txt")
+	os.system("pip install -r Installation\ Files/requirements.txt ")
 
 def is_root():
 	if not os.geteuid()==0:

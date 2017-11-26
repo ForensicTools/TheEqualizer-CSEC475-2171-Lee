@@ -29,7 +29,7 @@ os_choice = raw_input("OS Type: ")
 
 # OS Specification
 if os_choice == '1':
-	os.system("osascript StyleTerm.scpt 1 Homebrew")
+	os.system("osascript Installation\ Files/StyleTerm.scpt 1 Homebrew")
 	os.system("sudo python Program\ Files/Main.py")
 	
 elif os_choice == '2':

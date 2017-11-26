@@ -3,11 +3,20 @@
 # TheEqualizer-CSEC475-2171-Lee
 Project utilizes the Nessus API to pull scans from server to record numbers and display charts and graphs using plotly.
 
+The Equalizer creates additional visualization for Nessus Reports. It helps people who are not technologically inclined better understand the data the Nessus Report displays. This project is designed to help companies who are hired to perform penetration testing and vulnerability scans who use the Nessus Vulnerability Scanner; give their client better visualizations for both the pentester and the client.
+
 # Current Version
 1. Operating System - MacOS High Sierra 10.13
 2. Nessus Server Version - 6.11.2
 3. Python Version - 2.7.14
 
+
+# Contact Information
+For Updates/Modifications/Applause/etc.
+<ul>
+<li>Creator: Wesley Lee</li>
+<li>Email: wtl5736@rit.edu</li>
+</ul>
 
 # Table of Contents
 		A. Create a Plotly Account
