@@ -56,7 +56,7 @@ Project utilizes the Nessus API to pull scans from server to record numbers and 
 2. Change the directory to TheEqualizer-CSEC475-2171-Lee
 	-> "cd TheEqualizer-CSEC475-2171-Lee"
 3. Run the setup program
-	-> "python setup.py"
+	-> "sudo python setup.py"
 4. setup.py will install the necessary python modules and will ask your for 
 	your plotly username and api_key (To found your api_key look 
 	at Section B in the table of contents)
@@ -144,7 +144,7 @@ Project utilizes the Nessus API to pull scans from server to record numbers and 
 2. Change the directory to TheEqualizer-CSEC475-2171-Lee
 	-> "cd TheEqualizer-CSEC475-2171-Lee"
 3. Make sure you ran setup.py before running
-4. Enter the command "python The_Equalizer.py" to run the program
+4. Enter the command "sudo python The_Equalizer.py" to run the program
 
 
 ## G. How to Find Nessus IP/URL, Port Number, and Report ID
