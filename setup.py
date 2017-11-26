@@ -41,7 +41,7 @@ def install_pymods_linux():
 	os.system("pip install --upgrade pip")
 	
 	print "\nInstalling curl...\n"
-		os.system("apt-get install curl")
+	os.system("apt-get install curl")
 	
 	print "\nInstalling Necessary Python Modules...\n\n"
 	os.system("pip install -r requirements.txt")
