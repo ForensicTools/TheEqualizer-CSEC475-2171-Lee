@@ -136,24 +136,32 @@ For Updates/Modifications/Applause/etc.
 
 ## E. How to Install Python 2.7.14
 
-1. Go to https://www.python.org
-2. Scroll down to "Looking for Specific Release?" section
-3. Find "Python 2.7.14"
-4. Look for the correct installer based on your OS
-5. Run the Python Installer
-6. Click "Continue"
-7. Click "Continue" again and then click "Agree" for the License Agreement
-8. Don't change the Destination Folder; click "Continue"
-9. Finally click "Install"
-
+1. Open a terminal and change the directory to the Desktop
+  * "cd ~/Desktop"
+2. Enter, "wget https://www.python.org/ftp/python/2.7.14/Python-2.7.14.tgz --no-check-certificate"
+3. Then enter, "tar -xzf Python-2.7.14.tgz"
+4. After the tar file is decompressed change to the directory that was extracted
+  * "cd Python-2.7.14"
+5. Next, enter in the terminal, "sudo ./configure"
+6. Then, enter in the terminal, "sudo make install"
+7. Finally, enter in the terminal, "sudo make altinstall"
+8. To test python is the correct version, enter in the terminal, "python"
+9. This should open a python terminal and at the top it should display "Python 2.7.14"
 
 ## F. How to start The Equalizer
 
-1. Open a terminal
+1. Download the tool at https://github.com/wtl5736/TheEqualizer-CSEC475-2171-Lee.git; you can either:
+  * Open a terminal and enter "git clone https://github.com/wtl5736/TheEqualizer-CSEC475-2171-Lee.git"; or
+  * Download the zip file at https://github.com/wtl5736/TheEqualizer-CSEC475-2171-Lee.git
+3. Once the tool is downloaded, Open a terminal
 2. Change the directory to TheEqualizer-CSEC475-2171-Lee
 	-> "cd TheEqualizer-CSEC475-2171-Lee"
-3. Make sure you ran setup.py before running
+3. Make sure you run setup.py before running The_Equalizer.py
+  * "sudo python setup.py", then
+  * "sudo python The_Equalizer.py"'
 4. Enter the command "sudo python The_Equalizer.py" to run the program
+
+**** You only Need to run setup.py the first time, unless you use a different account for Plotly **
 
 
 ## G. How to Find Nessus IP/URL, Port Number, and Report ID
