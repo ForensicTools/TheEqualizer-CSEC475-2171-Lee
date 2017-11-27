@@ -67,7 +67,7 @@ For Updates/Modifications/Applause/etc.
 3. Run the setup program
 	-> "sudo python setup.py"
 4. setup.py will install the necessary python modules and will ask your for 
-	your plotly username and api_key (To found your api_key look 
+	your plotly username and api_key (To find your api_key look 
 	at Section B in the table of contents)
 5. Enter in your username and API Key for Plotly
 6. After the installation is finished; you will be prompted to 
