@@ -3,24 +3,32 @@
 # TheEqualizer-CSEC475-2171-Lee
 Project utilizes the Nessus API to pull scans from server to record numbers and display charts and graphs using plotly.
 
+The Equalizer creates additional visualization for Nessus Reports. It helps people who are not technologically inclined better understand the data the Nessus Report displays. This project is designed to help companies who are hired to perform penetration testing and vulnerability scans who use the Nessus Vulnerability Scanner; give their client better visualizations for both the pentester and the client.
+
 # Current Version
 1. Operating System - MacOS High Sierra 10.13
 2. Nessus Server Version - 6.11.2
 3. Python Version - 2.7.14
 
 
+# Contact Information
+For Updates/Modifications/Applause/etc.
+<ul>
+<li>Creator: Wesley Lee</li>
+<li>Email: wtl5736@rit.edu</li>
+</ul>
+
 # Table of Contents
 		A. Create a Plotly Account
 		B. How to Find Plotly API Key
 		C. How to Install Requirements
 		D. How to Install Nessus
-			Section 1. Windows
-			Section 2. MacOS
-			Section 3. Linux
+			Section 1. MacOS
+			Section 2. Linux
 		E. How to Install Python 2.7.14
 		F. How to start The Equalizer
-			Section 1. Windows
-			Section 2. MacOS and Linux
+			Section 1. MacOS and Linux
+		G. How to Find Nessus IP/URL, Port Number, and Report ID
 
 
 ## A. Create a Plotly Account
@@ -44,6 +52,11 @@ Project utilizes the Nessus API to pull scans from server to record numbers and 
 6. The API Key is hidden; click on "Regenerate Key"
 7. This will regenerate a new API Key
 8. You will need your username and  the API Key when you run setup.py
+9. Information:
+   * Red Arrow = Plotly Username
+   * Blue Arror = Plotly API Key
+
+![picture](/Pictures/Plotly_Info.png)
 
 
 ## C. How to Install Requirements
@@ -52,9 +65,9 @@ Project utilizes the Nessus API to pull scans from server to record numbers and 
 2. Change the directory to TheEqualizer-CSEC475-2171-Lee
 	-> "cd TheEqualizer-CSEC475-2171-Lee"
 3. Run the setup program
-	-> "python setup.py"
+	-> "sudo python setup.py"
 4. setup.py will install the necessary python modules and will ask your for 
-	your plotly username and api_key (To found your api_key look 
+	your plotly username and api_key (To find your api_key look 
 	at Section B in the table of contents)
 5. Enter in your username and API Key for Plotly
 6. After the installation is finished; you will be prompted to 
@@ -64,34 +77,7 @@ Project utilizes the Nessus API to pull scans from server to record numbers and 
 
 ## D. How to Install Nessus
 
-### Section 1. Windows
-
-1.  Go to https://www.tenable.com/products/nessus/select-your-operating-system
-2.  On left side of the webpage click "Microsoft Windows"
-3.  Choose your version of windows (click on the .msi file to download)
-	 a. After downloading the .msi file if you dont have an Activation Code 
-		click on "Get an Activation Code" below where you select your operating system
-	 b. Choose the version of Nessus you want (Home, Professional, or Manager)
-	 c. You should be emailed your activation key
-4.  Run the Nessus .msi file to install
-5.  Once the Tenable Nessus - InstallShield Wizard is opened and running click "Next"
-6.  Then "Accept" the License Agreement for Nessus
-7.  Click "Next" again
-8.  Finally, click "Install" (Requires Administrator Password)
-9.  After the installation is complete click "Finish"
-10. This will open a browser windows; click "Connect via SSL"
-11. The browser will tell you the site isn't safe; but go and click "Advanced"; 
-		depending on your browser add the exception or proceed to the localhost
-12. Next it will bring you to the Nessus Welcome screen; click "Continue"
-13. Next enter the "Username" and your "Password" for the Administrator account for Nessus
-14. Make sure the Registration is set to "Nessus (Home, Professional, or Manager)"
-15. Then enter in your activation code that should've been emailed to you, then click "Next"
-16. Nessus will download the correct version based on the activation code entered
-17. After the installation is finished, log in with the administrator account you 
-		created when installing Nessus
-
-
-###  Section 2. MacOS
+###  Section 1. MacOS
 
 1.  Go to https://www.tenable.com/products/nessus/select-your-operating-system
 2.  On left side of the webpage click "MacOS"
@@ -119,7 +105,7 @@ Project utilizes the Nessus API to pull scans from server to record numbers and 
 		you created when installing Nessus
 
 
-###  Section 3. Linux
+###  Section 2. Linux
 
 1.  Go to https://www.tenable.com/products/nessus/select-your-operating-system
 2.  On left side of the webpage click "Linux"
@@ -150,23 +136,44 @@ Project utilizes the Nessus API to pull scans from server to record numbers and 
 
 ## E. How to Install Python 2.7.14
 
-###  Section 1. Windows
-1. Go to https://www.python.org
-2. Scroll down to "Looking for Specific Release?" section
-3. Find "Python 2.7.14"
-4. Look for the correct installer based on your OS
-5. Run the Python Installer
-6. Click "Continue"
-7. Click "Continue" again and then click "Agree" for the License Agreement
-8. Don't change the Destination Folder; click "Continue"
-9. Finally click "Install"
-
+1. Open a terminal and change the directory to the Desktop
+  * "cd ~/Desktop"
+2. Enter, "wget https://www.python.org/ftp/python/2.7.14/Python-2.7.14.tgz --no-check-certificate"
+3. Then enter, "tar -xzf Python-2.7.14.tgz"
+4. After the tar file is decompressed change to the directory that was extracted
+  * "cd Python-2.7.14"
+5. Next, enter in the terminal, "sudo ./configure"
+6. Then, enter in the terminal, "sudo make install"
+7. Finally, enter in the terminal, "sudo make altinstall"
+8. To test python is the correct version, enter in the terminal, "python"
+9. This should open a python terminal and at the top it should display "Python 2.7.14"
 
 ## F. How to start The Equalizer
 
-1. Open a terminal
+1. Download the tool at https://github.com/wtl5736/TheEqualizer-CSEC475-2171-Lee.git; you can either:
+  * Open a terminal and enter "git clone https://github.com/wtl5736/TheEqualizer-CSEC475-2171-Lee.git"; or
+  * Download the zip file at https://github.com/wtl5736/TheEqualizer-CSEC475-2171-Lee.git
+3. Once the tool is downloaded, Open a terminal
 2. Change the directory to TheEqualizer-CSEC475-2171-Lee
 	-> "cd TheEqualizer-CSEC475-2171-Lee"
-3. Make sure you ran setup.py before running
-4. Enter the command "./The_Equalizer.py" to run the program
+3. Make sure you run setup.py before running The_Equalizer.py
+  * "sudo python setup.py", then
+  * "sudo python The_Equalizer.py"'
+4. Enter the command "sudo python The_Equalizer.py" to run the program
+
+**** You only Need to run setup.py the first time, unless you use a different account for Plotly **
+
+
+## G. How to Find Nessus IP/URL, Port Number, and Report ID
+1. Open your the Nessus Server in a web browser
+2. Log in with the correct credentials
+3. Click on the scan you are trying to access
+4. Information:
+  * Red Arrow = Nessus Server IP/URL Address
+  * Blue Arrow = Nessus Server Port Number
+  * Pink Arrow = Report ID Number
+
+![picture](/Pictures/Nessus_Info.png)
+
+
 </span>

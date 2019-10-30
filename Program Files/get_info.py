@@ -3,26 +3,62 @@ Name: get_info.py
 Author: Wesley Lee
 Assignment: Visualization Project
 Date Created: 11-02-2017
-Last Updated: 11-07-2017
+Last Updated: 11-23-2017
+
+Description:
+	Gets Info from both the Nessus Server and scans and either uses the 
+	data for other functions or displays them.
 """
 
 #!/usr/bin/python
-import os
+import os, getpass
 
-def get_info(token, port, option):
-	curl_cmd = "curl -s -k -X GET -H \"X-Cookie: token=" + token + "\" https://localhost:" + port + "/scans/ | python -m json.tool"
+# Checks if user ran program as root
+def is_root():
+	if not os.geteuid()==0:
+		print("\n{0}ERROR: The Equalizer must be run with root privileges. Try again with sudo:\n\t{1}$ sudo python The_Equalizer.py{2}\n").format(RED, GREEN, END)
+		sys.exit()
+
+# Asks for the username for the Nessus Server
+def get_username():
+	os.system("clear")
+	print("Enter information for Nessus Server:")
+	username = raw_input("\nUsername: ")
+	return username
+
+# Asks for the password for the Nessus Server
+def get_password():
+	password = getpass.getpass()
+	return password
+
+# Asks for the url of the Nessus Server
+def get_url():
+	url = raw_input("IP Address or URL of Nessus Server [Default = 127.0.0.1]: ")
+	return url
+
+# Asks for the port number of the Nessus Server
+def get_port():
+	port = raw_input("Port the server is running on [Default = 8834]: ")
+	return port
+
+# Gets information and displays information about the Nessus Server
+def get_info(token, url, port, option):
+	curl_cmd = "curl -s -k -X GET -H \"X-Cookie: token=" + token + "\" https://" + url + ":" + port + "/scans/ | python -m json.tool"
 	
 	os.system(curl_cmd)
-	
-def get_report(token, port, report_id, option):
+
+# Gets a report of a specific scan
+def get_report(token, url, port, report_id, option):
 	os.system("rm -rf report.txt")
-	curl_cmd = "curl -s -k -X GET -H \"X-Cookie: token=" + token + "\" https://localhost:" + port + "/scans/" + report_id + "/ | python -m json.tool"
+	curl_cmd = "curl -s -k -X GET -H \"X-Cookie: token=" + token + "\" https://" + url + ":" + port + "/scans/" + report_id + "/ | python -m json.tool"
+		
 	if option == '2':
 		os.system(curl_cmd + " >> report.txt")
 		os.system(curl_cmd)
 	elif option >= '3':
 		os.system(curl_cmd + " >> report.txt")
 
+# Gets the Number of hosts from the scan
 def get_num_of_hosts():
 	hosts = []
 	with open("report.txt") as f:
@@ -31,7 +67,8 @@ def get_num_of_hosts():
 				hosts.append(line[21:-2])
 				
 	return hosts
-	
+
+# Gets the ips from the scan	
 def get_ips():
 	ips = []
 	with open("report.txt") as f:
@@ -43,6 +80,7 @@ def get_ips():
 					ips.append(line[25:-3])
 	return ips
 
+# Gets the number of critical vulnerabilities per IP
 def get_crits():
 	crits = []
 	with open("report.txt") as f:
@@ -50,7 +88,8 @@ def get_crits():
 			if "\"critical\"" in line:
 				crits.append(line[24:-2])
 	return crits	
-	
+
+# Gets the number of high vulnerabilities per IP	
 def get_high():
 	high = []
 	with open("report.txt") as f:
@@ -58,7 +97,8 @@ def get_high():
 			if "\"high\"" in line:
 				high.append(line[20:-2])
 	return high
-	
+
+# Gets the number of medium vulnerabilities per IP
 def get_medium():
 	medium = []
 	with open("report.txt") as f:
@@ -67,6 +107,7 @@ def get_medium():
 				medium.append(line[22:-2])
 	return medium
 
+# Gets the number of low vulnerabilities per IP
 def get_low():
 	low = []
 	with open("report.txt") as f:
@@ -75,14 +116,7 @@ def get_low():
 				low.append(line[19:-2])
 	return low
 
-def get_score():
-	score = []
-	with open("report.txt") as f:
-		for line in f:
-			if "\"score\"" in line:
-				score.append(line[21:-2])
-	return score
-	
+# Gets the number of Info vulnerabilities per IP
 def get_info_vulns():
 	info = []
 	with open("report.txt") as f:
@@ -90,8 +124,17 @@ def get_info_vulns():
 			if "\"info\"" in line:
 				info.append(line[20:-2])
 	return info
-	
-	
+
+# Gets the the score of each IP
+def get_score():
+	score = []
+	with open("report.txt") as f:
+		for line in f:
+			if "\"score\"" in line:
+				score.append(line[21:-2])
+	return score	
+
+# Gets the number of total vulnerabilities per IP	
 def get_total_vulnerabilities():
 	ips = get_ips()
 	crits = get_crits()
